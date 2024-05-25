@@ -1,0 +1,234 @@
+@font-face {
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ .top {
+   overflow: hidden;
+    width: 1920px;
+    height: 900px;
+    background-color: #F2E9D8;
+}
+ header {
+     display: flex;
+     flex-direction: row;
+ }
+
+.top_logo {
+    width: 130px;
+    height: 40px;
+    margin: 31px 756px 31px 320px;
+}
+
+header nav ul li{
+  list-style: none;
+  margin-top: 41px;
+}
+
+header nav ul li a{
+  text-decoration: none;
+  font-weight: 400;
+  font-family: Pretendard;
+  font-size: 16px;
+  line-height: 20px;
+  color: black;
+  padding-right: 30px;
+}
+
+.Download {
+    position: absolute;
+    display: flex;
+    width: 140px;
+    height: 50px;
+    border-radius: 40px;
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+    background-color: #d97652;
+    justify-content: center;
+    align-items: center;
+    margin: 26px 320px 26px 49px;
+}
+
+.cont {
+    display: flex;
+}
+
+ h1 {
+    margin: 200px 0px 0px 320px;
+    font-weight: 700;
+    font-family: "Pretendard";
+    font-size: 48px;
+    line-height: 60px;
+    color: black;
+}
+
+.explain {
+    flex-wrap: wrap;
+    white-space: wrap;
+    width: 440px;
+    height: 86px;
+    margin: 40px 445px 0px 320px;
+    font-size: 16px;
+    color: black;
+    font-family: "Pretendard";
+    font-weight: 400;
+    line-height: 20px;
+
+}
+
+.button2 {
+    position: absolute;
+    display: flex;
+    width: 140px;
+    height: 50px;
+    border-radius: 40px;
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+    background-color: #d97652;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 725px 0px 320px;
+
+}
+
+.bigcat {
+    gap: 170px;
+    margin-top: 32px;
+
+}
+
+main {
+    display: inline-block;
+
+}
+
+.bb {
+    display: flex;
+    margin-left: 320px;
+    margin-right: 322px;
+}
+
+.bb > article {
+  margin-left: 110px;
+
+}
+
+.h1 {
+  margin-top: 172px;
+  margin-bottom: 30px;
+  font-family: Pretendard;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 45px;
+}
+
+
+.maincat {
+    width: 660px;
+    height: 390px;
+    border-radius: 30px;
+    margin-top: 80px;
+}
+
+
+.h2 {
+    margin-left: 522px;
+    margin-top: 120px;
+    font-family: Pretendard;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 60px;
+    color: #d97652;
+}
+
+
+.hh {
+  margin: 40px 82px 88px;
+  text-align: center;
+}
+
+
+.point {
+  color: #d97652;
+}
+
+
+.cat_list>section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 72px;
+  gap: 72px;
+}
+
+.cat_list>section>img {
+
+  border-radius: 30px;
+  filter: drop-shadow(10px 10px 30px #000000);
+}
+
+#showmore > p {
+  margin-top: 100px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: center;
+}
+
+#showmore > button {
+  width: 140px;
+  height: 50px;
+  margin: 28px 888.5px 80px;
+  border: 0px;
+  border-radius: 40px;
+  color: white;
+  font-weight: bolder;
+  text-decoration: none;
+  background-color: #d97652;
+  justify-content: center;
+  align-items: center;
+
+}
+
+hr {
+
+  width: 1278px;
+  border: 0px;
+  height: 1px;
+  background-color: #C4C4C4;
+  margin: auto;
+
+}
+
+#map {
+  margin: 48px auto;
+  width: 1278px;
+  height: 520px;
+  border-radius: 12px;
+
+}
+
+.bottom_cat {
+  z-index: 0;
+
+}
+
+
+.bottom_logo {
+    width: 226px;
+    height: 70px;
+    margin: 45px 826px 45px 320px;
+
+}
+
+.footer_icon {
+    padding-right: 40px;
+    margin-bottom: 60px;
+    height: 42px;
+}

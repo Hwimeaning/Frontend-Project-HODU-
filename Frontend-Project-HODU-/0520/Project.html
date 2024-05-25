@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="stylesheet" href="Projectstyle.css">
+</head>
+<body>
+ <section class="top">
+   <header>
+       <img src="HODU_logo.png" class="top_logo" alt="상단로고">
+       <!--상단 메뉴 버튼-->
+       <nav>
+         <ul>
+           <li>
+              <a href="#" target="_self">Home</a>
+              <a href="#">About</a>
+              <a href="#">Support</a>
+           </li>
+         </ul>
+       </nav>
+       <!--상단 다운로드 버튼-->
+       <nav>
+           <a href="about:blank" target="_blank" class="Download">Download</a>
+       </nav>
+   </header>
+
+   <div class="cont">
+     <article>
+         <h1>Lorem Ipsum is simply<br>dummy text of the printing and</h1>
+         <p class="explain">Lorem Ipsum is simply dummy text of the printing and
+             typesetting industry.<br>
+             Lorem Ipsum has been the industry's standard dummy text
+             ever since the 1500s, when an unknown</p>
+         <a href="about:blank" target="_blank" class="button2">Download</a>
+     </article>
+       <img src="big_cat.png" alt="큰 고양이" class="bigcat">
+   </div>
+ </section>
+
+   <main>
+       <section class="bb">
+       <img src="img_4.png" alt="고양이" class="maincat">
+       <article>
+       <p class="h1">Lorem Ipsum is simply<br>
+           dummy text of the printing<br>and dummy text</p>
+       <p class="hhh">Lorem Ipsum is simply dummy text of the printing and typesetting<br>industry.</p>
+       </article>
+       </section>
+        <p class="h2">dummy text of the printing and dummy</p>
+        <p class="hh">Lorem Ipsum is simply <span class="point">dummy text</span> of the printing and typesetting industry.<br>
+       Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown</p>
+
+     <div class="cat_list">
+       <section> <!-- 고양이 이미지 첫 줄 -->
+         <img src="cat1.png" alt="">
+         <img src="cat2.png" alt="">
+         <img src="cat3.png" alt="">
+       </section>
+       <section> <!-- 고양이 이미지 둘째 줄 -->
+         <img src="cat4.png" alt="">
+         <img src="cat5.png" alt="">
+         <img src="cat6.png" alt="">
+       </section>
+     </div>
+     <div id="showmore">
+       <p><b>Continue exploring HODU</b></p>
+       <button id="showmore_btn">show more</button>
+
+     </div>
+
+     <hr> <!-- 수평선 -->
+
+
+
+
+
+     <!-- 지도를 표시할 div 입니다 -->
+     <div id="map"></div>
+
+     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e88bce52ca6e37b55910343c1c061867"></script>
+     <script>
+       var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+         mapOption = {
+           center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+           level: 3 // 지도의 확대 레벨
+         };
+
+       // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+       var map = new kakao.maps.Map(mapContainer, mapOption);
+     </script>
+
+     <img class="bottom_cat" src="img_5.png" alt="하단 고양이 배경">
+   </main>
+
+
+   <footer>
+       <img src="HODU_logo.png" alt="하단 로고" class="bottom_logo">
+
+       <a href="https://post.naver.com/my.naver?memberNo=549393" target="_blank">
+           <img class="footer_icon" src="icon-blog.png" alt="블로그"></a>
+       <a href="https://www.instagram.com/m.by__sana/" target="_blank">
+           <img class="footer_icon" src="icon-insta.png" alt="인스타"></a>
+       <a href="https://www.facebook.com/estsoftfb" target="_blank">
+           <img class="footer_icon" src="icon-facebook.png" alt="페이스북"></a>
+       <a href="https://www.youtube.com/channel/UC4z65yImu5CY9ieFZBU7k4w" target="_blank">
+           <img class="footer_icon" src="icon-youtube.png" alt="유튜브"></a>
+   </footer>
+
+
+
+</body>
+</html>
