@@ -73,40 +73,58 @@
 
      <hr> <!-- 수평선 -->
 
+     <div class="map_container">
+     <p class="map_hd">Where you’ll be</p>
+     <p class="address"> 330, Cheomdan-ro, Jeju-si, Jeju-do, Republic of Korea</p>
+     </div>
 
-
-
-
-     <!-- 지도를 표시할 div 입니다 -->
-     <div id="map"></div>
+     <!-- 지도 삽입 -->
+     <div id="map">
 
      <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e88bce52ca6e37b55910343c1c061867"></script>
      <script>
-       var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+       var mapContainer = document.getElementById('map'),
          mapOption = {
            center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
            level: 3 // 지도의 확대 레벨
          };
 
-       // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
        var map = new kakao.maps.Map(mapContainer, mapOption);
      </script>
+     </div>
 
-     <img class="bottom_cat" src="img_5.png" alt="하단 고양이 배경">
+     <div id="sub_container">
+       <section class="sub_txt">
+         <p class="h">Subscribe to our Blog post</p>
+         <p class="ex">Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br>
+           Lorem Ipsum has been the industry's standard dummy text</p>
+       </section>
+
+       <section class="emailBox">
+         <img src="mail.png" alt="이메일 아이콘">
+         <p>Enter your e-mail address</p>
+         <button>Subscribe</button>
+       </section>
+
+     </div>
+
+     <!-- <img class="bottom_cat" src="img_5.png" alt="하단 고양이 배경"> -->
    </main>
 
 
    <footer>
        <img src="HODU_logo.png" alt="하단 로고" class="bottom_logo">
 
-       <a href="https://post.naver.com/my.naver?memberNo=549393" target="_blank">
-           <img class="footer_icon" src="icon-blog.png" alt="블로그"></a>
-       <a href="https://www.instagram.com/m.by__sana/" target="_blank">
-           <img class="footer_icon" src="icon-insta.png" alt="인스타"></a>
-       <a href="https://www.facebook.com/estsoftfb" target="_blank">
-           <img class="footer_icon" src="icon-facebook.png" alt="페이스북"></a>
-       <a href="https://www.youtube.com/channel/UC4z65yImu5CY9ieFZBU7k4w" target="_blank">
-           <img class="footer_icon" src="icon-youtube.png" alt="유튜브"></a>
+    <ul>
+       <li><a href="https://post.naver.com/my.naver?memberNo=549393" target="_blank">
+           <img class="footer_icon" src="icon-blog.png" alt="블로그"></a></li>
+       <li><a href="https://www.instagram.com/m.by__sana/" target="_blank">
+         <img class="footer_icon" src="icon-insta.png" alt="인스타"></a></li>
+       <li><a href="https://www.facebook.com/estsoftfb" target="_blank">
+         <img class="footer_icon" src="icon-facebook.png" alt="페이스북"></a></li>
+       <li><a href="https://www.youtube.com/channel/UC4z65yImu5CY9ieFZBU7k4w" target="_blank">
+         <img class="footer_icon" src="icon-youtube.png" alt="유튜브"></a></li>
+    </ul>
    </footer>
 
 
