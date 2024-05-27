@@ -8,78 +8,107 @@
     <link rel="stylesheet" href="Projectstyle.css">
 </head>
 <body>
- <section class="top">
+ <div class="top">
    <header>
-       <img src="HODU_logo.png" class="top_logo" alt="상단로고">
+       <img src="../img/HODU_logo.png" class="top_logo" alt="상단로고">
        <!--상단 메뉴 버튼-->
        <nav>
          <ul>
-           <li>
-              <a href="#" target="_self">Home</a>
-              <a href="#">About</a>
-              <a href="#">Support</a>
-           </li>
+           <li><a href="#" target="_self">Home</a></li>
+           <li><a href="about:blank" target="_self">About</a></li>
+           <li><a href="about:blank" target="_self">Support</a></li>
+           <li><a href="about:blank" target="_blank" class="Download">Download</a></li>
          </ul>
-       </nav>
-       <!--상단 다운로드 버튼-->
-       <nav>
-           <a href="about:blank" target="_blank" class="Download">Download</a>
        </nav>
    </header>
 
-   <div class="cont">
+   <section class="contents">
      <article>
          <h1>Lorem Ipsum is simply<br>dummy text of the printing and</h1>
-         <p class="explain">Lorem Ipsum is simply dummy text of the printing and
-             typesetting industry.<br>
-             Lorem Ipsum has been the industry's standard dummy text
-             ever since the 1500s, when an unknown</p>
-         <a href="about:blank" target="_blank" class="button2">Download</a>
+         <p>Lorem Ipsum is simply dummy text of the printing and<br>
+            typesetting industry.<br>
+            Lorem Ipsum has been the industry's standard dummy text<br>
+            ever since the 1500s, when an unknown</p>
+         <a href="about:blank" target="_blank" class="Download2">Download</a>
      </article>
-       <img src="big_cat.png" alt="큰 고양이" class="bigcat">
-   </div>
- </section>
+       <img src="../img/big_cat.png" alt="큰 고양이">
+   </section>
+ </div>
 
    <main>
-       <section class="bb">
-       <img src="img_4.png" alt="고양이" class="maincat">
+       <div class="main_top">
+       <img src="../img/img_4.png"  alt="고양이">
        <article>
-       <p class="h1">Lorem Ipsum is simply<br>
-           dummy text of the printing<br>and dummy text</p>
-       <p class="hhh">Lorem Ipsum is simply dummy text of the printing and typesetting<br>industry.</p>
+       <h1>Lorem Ipsum is simply<br>
+           dummy text of the printing<br>and dummy text</h1>
+       <p>Lorem Ipsum is simply dummy text of the printing and typesetting<br>industry.</p>
        </article>
-       </section>
-        <p class="h2">dummy text of the printing and dummy</p>
-        <p class="hh">Lorem Ipsum is simply <span class="point">dummy text</span> of the printing and typesetting industry.<br>
+       </div>
+
+     <div class="main_title">
+        <h1>dummy text of the printing and dummy</h1>
+        <p>Lorem Ipsum is simply <span class="point">dummy text</span> of the printing and typesetting industry.<br>
        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown</p>
-
-     <div class="cat_list">
-       <section> <!-- 고양이 이미지 첫 줄 -->
-         <img src="cat1.png" alt="">
-         <img src="cat2.png" alt="">
-         <img src="cat3.png" alt="">
-       </section>
-       <section> <!-- 고양이 이미지 둘째 줄 -->
-         <img src="cat4.png" alt="">
-         <img src="cat5.png" alt="">
-         <img src="cat6.png" alt="">
-       </section>
      </div>
-     <div id="showmore">
-       <p><b>Continue exploring HODU</b></p>
-       <button id="showmore_btn">show more</button>
 
-     </div>
+     <section class="photo_grid">
+       <ul class="photo_list">
+         <li><img src="../img/cat1.png" alt=""></li>
+         <li><img src="../img/cat2.png" alt=""></li>
+         <li><img src="../img/cat3.png" alt=""></li>
+         <li><img src="../img/cat4.png" alt=""></li>
+         <li><img src="../img/cat5.png" alt=""></li>
+         <li><img src="../img/cat6.png" alt=""></li>
+       </ul>
+       <div id="showmore">
+         <p>Continue exploring HODU</p>
+         <button id="showmore_btn">show more</button>
+       </div>
+     </section>
+
+         <script>
+           const listPic = document.querySelector('.photo_list');
+           const btn = document.querySelector('#showmore_btn');
+           let pageToPatch = 1;
+
+
+           btn.addEventListener('click', ()=>{fetchImages(pageToPatch += 1)});
+
+           async function fetchImages(page){
+             try{
+               const response = await fetch(`https://cataas.com/api/cats?skip=${3*(pageToPatch++)}&limit=3`);
+
+               if(!response.ok){
+                 throw new Error('네트워크 응답에 문제가 있습니다.');
+               }
+
+               // 제이슨 데이터를 자바스크립트 객체로 파싱
+               const datas = await response.json();
+               console.log(datas);
+               makeImageList(datas);
+
+             }catch(error){
+               console.error(error);
+             }
+           }
+
+           function makeImageList(datas){
+             datas.forEach((data)=>{
+               listPic.insertAdjacentHTML('beforeend', `<li><img src="https://cataas.com/cat?_id=${data._id}" alt="" class="photo_list>img"></li>`);
+             });
+           }
+         </script>
+
 
      <hr> <!-- 수평선 -->
 
      <div class="map_container">
+     <article>
      <p class="map_hd">Where you’ll be</p>
      <p class="address"> 330, Cheomdan-ro, Jeju-si, Jeju-do, Republic of Korea</p>
+     </article>
+     <div id="map"></div> <!-- 지도 삽입을 위한 div-->
      </div>
-
-     <!-- 지도 삽입 -->
-     <div id="map">
 
      <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e88bce52ca6e37b55910343c1c061867"></script>
      <script>
@@ -91,39 +120,76 @@
 
        var map = new kakao.maps.Map(mapContainer, mapOption);
      </script>
-     </div>
+
 
      <div id="sub_container">
-       <section class="sub_txt">
-         <p class="h">Subscribe to our Blog post</p>
-         <p class="ex">Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br>
+       <article class="sub_txt">
+         <p class="sub_hd">Subscribe to our Blog post</p>
+         <p class="sub_ex">Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br>
            Lorem Ipsum has been the industry's standard dummy text</p>
-       </section>
+       </article>
 
-       <section class="emailBox">
-         <img src="mail.png" alt="이메일 아이콘">
-         <p>Enter your e-mail address</p>
-         <button>Subscribe</button>
+       <section class="emailBox"> <!-- 이메일 입력 박스 -->
+         <img src="../img/mail.png" alt="이메일 아이콘">
+         <label for="email">
+           <input id="email" type="email" placeholder="Enter your e-mail address"/>
+         </label>
+         <button id="modal-open-btn">Subscribe</button> <!-- 모달 생성을 위한 버튼-->
+         <div id="modal_container" class="hidden">
+           <img class="modal_back" src="../img/modal_back.png" alt="">
+           <div id="modal-content">
+             <img class="modal_cat" src="../img/modal_cat.png" alt="">
+             <p id="modal-content-main">Thank you!</p>
+             <p id="modal-content-sub">Lorem Ipsum is simply dummy text of the printing industry. </p>
+             <button id="modal-close-btn">OK! I Love HODU</button>
+           </div>
+         </div>
        </section>
 
      </div>
 
-     <!-- <img class="bottom_cat" src="img_5.png" alt="하단 고양이 배경"> -->
+         <script>
+           const modalOpenButton = document.getElementById('modal-open-btn');
+           const modalCloseButton = document.getElementById('modal-close-btn');
+           const modal = document.getElementById('modal_container');
+
+           modalOpenButton.addEventListener('click', () => {
+             modal.classList.remove('hidden');
+           });
+
+           modalCloseButton.addEventListener('click', () => {
+             modal.classList.add('hidden');
+           });
+         </script>
+
+
+     <div class="bottom_cat">
+     <img src="../img/img_5.png" alt="하단 고양이 이미지">
+     </div>
+
+     <button class="scrollUp"  onclick="scrollUp()"></button>
+
    </main>
+
+     <script>
+       function scrollUp() {
+         window.scrollTo(0, 0);
+       }
+     </script>
 
 
    <footer>
-       <img src="HODU_logo.png" alt="하단 로고" class="bottom_logo">
+       <img src="../img/HODU_logo.png" alt="하단 로고" class="bottom_logo">
 
     <ul>
        <li><a href="https://post.naver.com/my.naver?memberNo=549393" target="_blank">
-           <img class="footer_icon" src="icon-blog.png" alt="블로그"></a></li>
+           <img class="footer_icon" src="../img/icon-blog.png" alt="블로그"></a></li>
        <li><a href="https://www.instagram.com/m.by__sana/" target="_blank">
-         <img class="footer_icon" src="icon-insta.png" alt="인스타"></a></li>
+         <img class="footer_icon" src="../img/icon-insta.png" alt="인스타"></a></li>
        <li><a href="https://www.facebook.com/estsoftfb" target="_blank">
-         <img class="footer_icon" src="icon-facebook.png" alt="페이스북"></a></li>
+         <img class="footer_icon" src="../img/icon-facebook.png" alt="페이스북"></a></li>
        <li><a href="https://www.youtube.com/channel/UC4z65yImu5CY9ieFZBU7k4w" target="_blank">
-         <img class="footer_icon" src="icon-youtube.png" alt="유튜브"></a></li>
+         <img class="footer_icon" src="../img/icon-youtube.png" alt="유튜브"></a></li>
     </ul>
    </footer>
 
